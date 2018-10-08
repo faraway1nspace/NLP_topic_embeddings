@@ -14,10 +14,12 @@ This is interesting for a number of reasons:
 Finally, in some cases, the predictive performance of the model with topic-embeddings be better than a more conventional NLP-LSTM deep-learning model. In a related (but secret) project I did using a propriety dataset from an AI-startup company in Toronto, topic-embeddings improved the model classification performance, likely do to redundancy & relatedness among seemingly independent categories, especially rare categories with ~10 observations in the data. The topic embedding can learn these relationships, allowing some information sharing among "independent" topics.
 
 ### Files and tutorials
-+ A generic NLP LSTM classification model is presented in the file [FinComplain_LSTM_default_model.ipynb](https://github.com/faraway1nspace/NLP_topic_embeddings/blob/master/FinComplain_LSTM_default_model.ipynb). This sets a base-line model for comparison
-+ The topic embedding model (a slight variant of the the above LSTM model) is presented in XXX. The demo walks through visulizing the embeddings, does some clustering, and qualitatively assesses the embeddings.
-+ Among both files, there are generic NLP functions to extract quantitative "features" from customer text-complaints above various financial products/companies.
-+ [Hyperparameter tuning](https://github.com/faraway1nspace/NLP_topic_embeddings/blob/master/FinComplain_LSTM_default_hyperparam-tuning.ipynb): the LSTM models have various parameters which govern the complexity of the model(aka, hyperparameters, which control the bias-variance trade-off). I present a [reinforcement-learning/multi-arm bandit procedure](https://github.com/faraway1nspace/NLP_topic_embeddings/blob/master/FinComplain_LSTM_default_hyperparam-tuning.ipynb) to "tune" some of these hyperparameters 
++ [FinComplain_LSTM_default_model.ipynb](https://github.com/faraway1nspace/NLP_topic_embeddings/blob/master/FinComplain_LSTM_default_model.ipynb) : A generic NLP LSTM classification model. This sets a base-line model for comparison.
++ XXX The topic embedding model (a slight variant of the the above LSTM model). The demo walks through visulizing the embeddings, does some clustering, and qualitatively assesses the embeddings.
+
+Among both files, there are generic NLP functions to extract quantitative "features" from customer text-complaints above various financial products/companies. Both files uses hyperparameter tuning based on ....
+
++ [FinComplain_LSTM_default_hyperparam-tuning.ipynb](https://github.com/faraway1nspace/NLP_topic_embeddings/blob/master/FinComplain_LSTM_default_hyperparam-tuning.ipynb): hyperparameter tuning of the LSTM models, based on a novel reinforcement-learning/multi-arm bandit procedure.
 
 ### Insight Data
 This was a demo-project for [Insight Data Toronto](https://blog.insightdatascience.com/insight-expands-to-canada-launching-artificial-intelligence-and-data-science-fellows-programs-in-e7200a5d0893). The actual project used a propriety dataset, but the method generalizes well for any text-NLP-classification problem with a growing number of categories.
