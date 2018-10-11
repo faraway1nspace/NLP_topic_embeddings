@@ -20,7 +20,7 @@ Finally, in some cases, the predictive performance of the model with topic-embed
 Among both files, there are generic NLP functions to extract quantitative "features" from customer text-complaints above various financial products/companies. Both files uses hyperparameter tuning based on ....
 
 + [FinComplain_LSTM_default_hyperparam-tuning.ipynb](https://github.com/faraway1nspace/NLP_topic_embeddings/blob/master/FinComplain_LSTM_default_hyperparam-tuning.ipynb): hyperparameter tuning of the LSTM models, inspired by a novel multi-arm bandit tuning procedure.
-_ [FinComplain_LSTM_default_hyperparam-tuning.ipynb](https://github.com/faraway1nspace/NLP_topic_embeddings/blob/master/FinComplain_LSTM_embed_hyperparam-tuning.ipynbhttps://github.com/faraway1nspace/NLP_topic_embeddings/blob/master/): hyperparameter tuning of the category-embedding+LSTM model, based on multi-arm bandit tuning procedure.
++ [FinComplain_LSTM_default_hyperparam-tuning.ipynb](https://github.com/faraway1nspace/NLP_topic_embeddings/blob/master/FinComplain_LSTM_embed_hyperparam-tuning.ipynbhttps://github.com/faraway1nspace/NLP_topic_embeddings/blob/master/): hyperparameter tuning of the category-embedding+LSTM model, based on multi-arm bandit tuning procedure.
 
 #### Insight Data
 This was a demo-project for [Insight Data Toronto](https://blog.insightdatascience.com/insight-expands-to-canada-launching-artificial-intelligence-and-data-science-fellows-programs-in-e7200a5d0893). The actual project used a propriety dataset from an AI-startup compnay in Toronto. This tutorial tries to demonstrate the same technique on a different dataset and see whether the text-NLP-classification procedure generalizes well outside of my Insight Data project.
