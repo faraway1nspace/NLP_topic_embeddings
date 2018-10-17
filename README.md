@@ -41,8 +41,20 @@ This tutorial uses data that can be downloaded from [https://www.consumerfinance
 
 I found that the models took about 30min to 1 hour to run on a retail laptop with video-card Geforce GTX 1050.
 
+<b>WARNING</b> It is better to run `keras` models within a proper terminal or python IDE, and not in a jupyter-notebook. I present the code merely because jupyter has the nice markdown formatting), especially if you are using GPUs.
 
-## Workflow
+## Conclusions
++ using a simple [generic approach to NLP+LSTM](https://github.com/faraway1nspace/NLP_topic_embeddings/blob/master/FinComplain_LSTM_default_model.ipynb), we were able to acheive a moderately-high classification accuracy, as judged by the out-of-sample AUC statistics (0.95), both globally and per-category.
++ the ["topic-embeddings"](https://github.com/faraway1nspace/NLP_topic_embeddings/blob/master/FinComplain_LSTM_embedding_model.ipynb) technique did not improve classification, and perhaps even degraded the performance slightly (cv-AUC = 0.94).
++ the topic-embeddings technique allowed us to learn a super-structure to the labels (aka "issues"), by clustering the different labels in the low-dimensional vector space.
 
+This study was particularly interesting to me as it shows that topic-embeddings are not some panacea for classification. Here, the topic-categorization did not improve accuracy, which differs from my exerience in a proprietary customer-review dataset, where it was important.
 
-Enjoy! Thanks for stopping by.
+Why the difference? My working hypothesis is that the topic-embeddings are only useful (for prediction/classifcation) when:
++ in <b>multi-class</b> classification, rather than multinomial classification;
++ there is significant redundancy & relatedness among putative labels/categories
+
+The first point may seem like a subtle word-play, but has profound differences for the loss function. In multi-class classification, each label has a _binary-loss function_ (yes or no), and essentially each label is independently assessed whether it is present in a training sample or not (there can be many labels present in one observation); whereas under _multinomial_ classification, there is just ONE proper label per observation, and each putative label competes with each other to be present. In the multiclass case, it could be that the embeddings providing a learned-correlation structure to the data, among otherwise independent binomial evaluations (e.g., if a label "credit-default" is in an observation, there is a correlated probability that "credit-late-payments" will also be within the same observation. Under multinomial loss, this correlated relationship between similar categories would not improve the loss, as only one label can be present per observation, and we get no obvious benefit from the association.
+
+In the future, I intend to test this hypothesis by exploring the topic-embedding technique on other multi-class datasets, opposed to mulinomial datasets.
+
